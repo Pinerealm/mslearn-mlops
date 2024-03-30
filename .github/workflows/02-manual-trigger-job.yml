@@ -17,5 +17,7 @@ jobs:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Move to the src folder
       run: cd ./src/
+    - name: Check working directory
+      run: pwd
     - name: Run the machine learning job
       run: az ml job create --file job.yml -g lab1 -w ML1
