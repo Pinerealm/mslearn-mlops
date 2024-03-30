@@ -17,13 +17,13 @@ def main(args):
     mlflow.sklearn.autolog()
 
     # read data
-    df = get_csvs_df(args.training_data)
+    df = get_csvs_df(args['training_data'])
 
     # split data
     X_train, X_test, y_train, y_test = split_data(df)
 
     # train model
-    train_model(args.reg_rate, X_train, X_test, y_train, y_test)
+    train_model(args['reg_rate'], X_train, X_test, y_train, y_test)
 
 
 def get_csvs_df(path):
