@@ -1,0 +1,31 @@
+name: Model Deployment Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy_model:
+    name: Deploy Model
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Up Azure CLI
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # - name: Create Model Endpoint
+      #   run: |
+      #     az ml online-endpoint create --name diabetes-pred-1 -g lab1 -w ML1
+
+      - name: Deploy Model
+        working-directory: ./src
+        run: |
+          az ml online-deployment create --file deployment.yaml -g lab1 -w ML1
+
+      - name: Notify Success
+        run: echo "Model deployment succeeded!"
