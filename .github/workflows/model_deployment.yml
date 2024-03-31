@@ -21,9 +21,9 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Create Model Endpoint
-        run: |
-          az ml online-endpoint create --name diabetes-pred-2 -g lab1 -w ML1
+      # - name: Create Model Endpoint
+      #   run: |
+      #     az ml online-endpoint create --name diabetes-pred-2 -g lab1 -w ML1
 
       - name: Deploy Model
         working-directory: ./src
