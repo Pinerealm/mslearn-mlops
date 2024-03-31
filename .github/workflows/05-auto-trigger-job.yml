@@ -31,7 +31,7 @@ jobs:
     name: Production Job
     runs-on: ubuntu-latest
     environment:
-      name: dev
+      name: prod
     needs: experiment
     steps:
     - name: Check out repo
