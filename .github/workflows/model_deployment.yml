@@ -28,7 +28,7 @@ jobs:
       - name: Deploy Model
         working-directory: ./src
         run: |
-          az ml online-deployment create --file deployment.yaml -g lab1 -w ML1 --all-traffic
+          az ml online-deployment create --file deployment.yml -g lab1 -w ML1 --all-traffic
 
       - name: Notify Success
         run: echo "Model deployment succeeded!"
