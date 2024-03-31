@@ -2,5 +2,5 @@ $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.sch
 name: diabetes-deployment
 endpoint_name: diabetes-pred-1
 model: azureml:azureml_teal_drop_2cb9x26lwh_output_mlflow_log_model_2015470289:1
-instance_type: Standard_F2s_v2
-instance_count: 3
+instance_type: Standard_DS3_v2
+instance_count: 1
